@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+## Installation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To install the app, first clone the repository:
 
-## Available Scripts
+### git clone https://github.com/payalthummar/select-category-task.git
 
-In the project directory, you can run:
+Then navigate to the project directory and install the dependencies:
 
-### `npm start`
+```javascript
+- cd select-category-task
+- npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Finally, start the app:
 
-### `npm test`
+```javascript
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app should now be running on [http://localhost:3000](http://localhost:3000).
 
-### `npm run build`
+## Overview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- You have a JSON Data inside the data folder (category.json) !important [Added backgroundColor properties in JSON file to set up the background-color]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- On the load of the application, you get to the start screen named with (SelectionPage component). The user is asked to select a category
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- When the user selects the category, it saves a selection as Cookie and redirects to the Home Page (selectedCategoryPage component)
 
-### `npm run eject`
+- On Home Page, there is a carousel slider with data
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- If the user selects Category “a” or "b", cookies save the selectedCategory
+  e.g [<button onClick={() => handleCategorySelect("a")}>Category A</button>
+  <button onClick={() => handleCategorySelect("b")}>Category B</button>]
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- If the user selects Category “a”, The slider data (image, heading, subheading, background-color ) load as per the category “a” in the JSON file
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- If the user selects Category “b”, The slider data (image, heading, subheading, background-color) load as per the category “b” in the JSON file
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## setCookie
 
-## Learn More
+// Save the selected category as a cookie with default path
+document.cookie = `selectedCategory=${selectedCategory}; path="/"`;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+// Redirect to the home page
+window.location.href = "/home";
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## getCookie function retuns the cookies
 
-### Code Splitting
+function getCookie(cookieName) {
+const cookieValue = document.cookie
+.split("; ")
+.find((name) => name.startsWith(`${cookieName}=`))
+?.split("=")[1];
+return cookieValue;
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Step 1: [document.cookie] retrieves all the cookies as a string.
+Step 2: [.split("; ")] splits the cookie string into an array of strings. The "; " is used as a separator because cookies are typically separated by "; " in the cookie string.
+Step 3: [.find()] searches the first string that start with "selectedCategory=". This string represent the "selectedCategory" cookie.
+Step 4: ?.split("=")[1] splits the value of the "selectedCategory" cookie into an array using "=" as a separator and retrieving the second element of the array (index 1).

@@ -1,0 +1,30 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.landingpage-image {
+  height: 60vh;
+  width: 30vw;
+  position: absolute;
+  top: 1%;
+  left: 35%;
+}
+.category-buttons {
+  margin-top: 20rem;
+}
+.category-buttons button {
+  background-color: #2bb79e;
+  width: 200px;
+  height: 54px;
+  border-radius: 4px;
+  opacity: 80%;
+  color: var(--text-primary-color);
+  cursor: pointer;
+  margin: 2rem 1rem;
+}
+.category-buttons button:nth-child(1) {
+  background-color: #37cbfa;
+}
