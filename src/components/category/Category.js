@@ -1,9 +1,9 @@
 import "../category/category.css";
-export default function Category({ categoryItems }) {
+export default function Category({ categoryItems, image, sliderCategories }) {
   return (
     <>
       <img
-        src={categoryItems.backgroundImage}
+        src={image.backgroundImage}
         alt={categoryItems.heading}
         className="background-image"
       />

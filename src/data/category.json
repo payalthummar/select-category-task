@@ -6,22 +6,34 @@
           "heading": "Category A Heading 1",
           "subHeading": "Product 1 Sub Heading 1...",
           "id": 1,
-          "backgroundImage": "images/background.png",
-          "backgroundColor": "#3785FA"
+          "background": [
+            {
+              "backgroundImage": "images/background.png",
+              "backgroundColor": "#3785FA"
+            }
+          ]
         },
         {
           "heading": "Category A Heading 2",
           "subHeading": "Product 1 Sub Heading 2...",
           "id": 2,
-          "backgroundImage": "images/background.png",
-          "backgroundColor": "#B77F2B"
+          "background": [
+            {
+              "backgroundImage": "images/background.png",
+              "backgroundColor": "#B77F2B"
+            }
+          ]
         },
         {
           "heading": "Category A Heading 3",
           "subHeading": "Product 1 Sub Heading 3...",
           "id": 3,
-          "backgroundImage": "images/background.png",
-          "backgroundColor": "#2BB79E"
+          "background": [
+            {
+              "backgroundImage": "images/background.png",
+              "backgroundColor": "#2BB79E"
+            }
+          ]
         }
       ],
       "category": "a",
@@ -33,22 +45,34 @@
           "heading": "Category B Heading 1",
           "subHeading": "Product 2 Sub Heading 1...",
           "id": 4,
-          "backgroundImage": "images/background.png",
-          "backgroundColor": "#37CBFA"
+          "background": [
+            {
+              "backgroundImage": "images/background.png",
+              "backgroundColor": "#37CBFA"
+            }
+          ]
         },
         {
           "heading": "Category B Heading 2",
           "subHeading": "Product 2 Sub Heading 2...",
           "id": 5,
-          "backgroundImage": "images/background.png",
-          "backgroundColor": "#D96C08"
+          "background": [
+            {
+              "backgroundImage": "images/background.png",
+              "backgroundColor": "#D96C08"
+            }
+          ]
         },
         {
           "heading": "Category B Heading 3",
           "subHeading": "Product 2 Sub Heading 3...",
           "id": 6,
-          "backgroundImage": "images/background.png",
-          "backgroundColor": "#2B85B7"
+          "background": [
+            {
+              "backgroundImage": "images/background.png",
+              "backgroundColor": "#2B85B7"
+            }
+          ]
         }
       ],
       "category": "b",

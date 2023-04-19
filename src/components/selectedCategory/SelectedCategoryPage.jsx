@@ -35,7 +35,6 @@ export default function SelectedCategoryPage() {
   // Slider settings
   const settings = {
     dots: true,
-
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -48,22 +47,25 @@ export default function SelectedCategoryPage() {
         {/* Map the sliderCategories state to display the data  */}
         {sliderCategories.map((categoryItems) => (
           <>
-            <div
-              className="category-container"
-              style={{ background: categoryItems.backgroundColor }}
-            >
-              {/* Category component to display the Items */}
-              <Category categoryItems={categoryItems} />
-            </div>
+            {/* Map the background object to display the image and color */}
+            {categoryItems?.background.map((image) => (
+              <div
+                className="category-container"
+                style={{ background: image.backgroundColor }}
+              >
+                {/* Category component to display the Items */}
+                <Category
+                  categoryItems={categoryItems}
+                  image={image}
+                  sliderCategories={sliderCategories}
+                />
+              </div>
+            ))}
           </>
         ))}
       </Slider>
       <div className="category-image">
-        <img
-          src={categoryImage}
-          alt="category-image"
-          className="category-image"
-        />
+        <img src={categoryImage} alt="category" className="category-image" />
       </div>
     </>
   );
